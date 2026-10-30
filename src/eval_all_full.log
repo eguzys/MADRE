@@ -1,0 +1,168 @@
+>>> numbOfNodes -> 3
+=== ffn_n3  (N=3, policy=trained, n=100) ===
+/work/scratch/eguzys/padre_env/lib/python3.11/site-packages/torch/cuda/__init__.py:1061: UserWarning: Can't initialize NVML
+  raw_cnt = _raw_device_count_nvml()
+/work/scratch/eguzys/padre_env/lib/python3.11/site-packages/torchrl/envs/libs/pettingzoo.py:281: UserWarning: PettingZoo in TorchRL is tested using version == 1.24.3 , If you are using a different version and are experiencing compatibility issues,please raise an issue in the TorchRL github.
+  warnings.warn(
+/work/scratch/eguzys/padre_env/lib/python3.11/site-packages/torchrl/collectors/_base.py:1045: DeprecationWarning: SyncDataCollector has been deprecated and will be removed in v0.13. Please use Collector instead.
+  warnings.warn(
+/work/scratch/eguzys/padre_env/lib/python3.11/site-packages/torchrl/collectors/_single.py:911: UserWarning: total_frames (5000000) is not exactly divisible by frames_per_batch (6000). This means 4000 additional frames will be collected.To silence this message, set the environment variable RL_WARNINGS to False.
+  warnings.warn(
+Loading checkpoint: /work/projects/eguzys/code/src/out/benchmarl/ffn_n3/normalizedmappo_static_mlp__27659a5c_26_05_30-13_37_07/checkpoints/checkpoint_4920000.pt
+Traceback (most recent call last):
+  File "/work/projects/eguzys/code/src/evaluation/evaluate.py", line 257, in <module>
+    main()
+  File "/work/projects/eguzys/code/src/evaluation/evaluate.py", line 140, in main
+    action_fn, task_config = load_trained_policy(str(ckpt_path), device)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/work/projects/eguzys/code/src/evaluation/policies.py", line 50, in load_trained_policy
+    policy, task_config = _load_via_reload_from_file(ckpt, device)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/work/projects/eguzys/code/src/evaluation/policies.py", line 129, in _load_via_reload_from_file
+    experiment = Experiment.reload_from_file(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/work/scratch/eguzys/padre_env/lib/python3.11/site-packages/benchmarl/experiment/experiment.py", line 1059, in reload_from_file
+    experiment = Experiment(
+                 ^^^^^^^^^^^
+  File "/work/scratch/eguzys/padre_env/lib/python3.11/site-packages/benchmarl/experiment/experiment.py", line 379, in __init__
+    self._load_experiment()
+  File "/work/scratch/eguzys/padre_env/lib/python3.11/site-packages/benchmarl/experiment/experiment.py", line 1014, in _load_experiment
+    loaded_dict: OrderedDict = torch.load(
+                               ^^^^^^^^^^^
+  File "/work/scratch/eguzys/padre_env/lib/python3.11/site-packages/torch/serialization.py", line 1570, in load
+    return _load(
+           ^^^^^^
+  File "/work/scratch/eguzys/padre_env/lib/python3.11/site-packages/torch/serialization.py", line 2190, in _load
+    result = unpickler.load()
+             ^^^^^^^^^^^^^^^^
+  File "/work/scratch/eguzys/padre_env/lib/python3.11/site-packages/torch/_weights_only_unpickler.py", line 541, in load
+    self.append(self.persistent_load(pid))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/work/scratch/eguzys/padre_env/lib/python3.11/site-packages/torch/serialization.py", line 2154, in persistent_load
+    typed_storage = load_tensor(
+                    ^^^^^^^^^^^^
+  File "/work/scratch/eguzys/padre_env/lib/python3.11/site-packages/torch/serialization.py", line 2116, in load_tensor
+    wrap_storage = restore_location(storage, location)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/work/scratch/eguzys/padre_env/lib/python3.11/site-packages/torch/serialization.py", line 734, in default_restore_location
+    result = fn(storage, location)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "/work/scratch/eguzys/padre_env/lib/python3.11/site-packages/torch/serialization.py", line 667, in _deserialize
+    device = _validate_device(location, backend_name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/work/scratch/eguzys/padre_env/lib/python3.11/site-packages/torch/serialization.py", line 634, in _validate_device
+    raise RuntimeError(
+RuntimeError: Attempting to deserialize object on a CUDA device but torch.cuda.is_available() is False. If you are running on a CPU-only machine, please use torch.load with map_location=torch.device('cpu') to map your storages to the CPU.
+
+>>> numbOfNodes -> 4
+=== ffn_n4  (N=4, policy=trained, n=100) ===
+/work/scratch/eguzys/padre_env/lib/python3.11/site-packages/torch/cuda/__init__.py:1061: UserWarning: Can't initialize NVML
+  raw_cnt = _raw_device_count_nvml()
+/work/scratch/eguzys/padre_env/lib/python3.11/site-packages/torchrl/envs/libs/pettingzoo.py:281: UserWarning: PettingZoo in TorchRL is tested using version == 1.24.3 , If you are using a different version and are experiencing compatibility issues,please raise an issue in the TorchRL github.
+  warnings.warn(
+/work/scratch/eguzys/padre_env/lib/python3.11/site-packages/torchrl/collectors/_base.py:1045: DeprecationWarning: SyncDataCollector has been deprecated and will be removed in v0.13. Please use Collector instead.
+  warnings.warn(
+Loading checkpoint: /work/projects/eguzys/code/src/out/benchmarl/ffn_probe/normalizedmappo_static_mlp__5540bc8e_26_05_27-01_39_19/checkpoints/checkpoint_4320000.pt
+Traceback (most recent call last):
+  File "/work/projects/eguzys/code/src/evaluation/evaluate.py", line 257, in <module>
+    main()
+  File "/work/projects/eguzys/code/src/evaluation/evaluate.py", line 140, in main
+    action_fn, task_config = load_trained_policy(str(ckpt_path), device)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/work/projects/eguzys/code/src/evaluation/policies.py", line 50, in load_trained_policy
+    policy, task_config = _load_via_reload_from_file(ckpt, device)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/work/projects/eguzys/code/src/evaluation/policies.py", line 129, in _load_via_reload_from_file
+    experiment = Experiment.reload_from_file(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/work/scratch/eguzys/padre_env/lib/python3.11/site-packages/benchmarl/experiment/experiment.py", line 1059, in reload_from_file
+    experiment = Experiment(
+                 ^^^^^^^^^^^
+  File "/work/scratch/eguzys/padre_env/lib/python3.11/site-packages/benchmarl/experiment/experiment.py", line 379, in __init__
+    self._load_experiment()
+  File "/work/scratch/eguzys/padre_env/lib/python3.11/site-packages/benchmarl/experiment/experiment.py", line 1014, in _load_experiment
+    loaded_dict: OrderedDict = torch.load(
+                               ^^^^^^^^^^^
+  File "/work/scratch/eguzys/padre_env/lib/python3.11/site-packages/torch/serialization.py", line 1570, in load
+    return _load(
+           ^^^^^^
+  File "/work/scratch/eguzys/padre_env/lib/python3.11/site-packages/torch/serialization.py", line 2190, in _load
+    result = unpickler.load()
+             ^^^^^^^^^^^^^^^^
+  File "/work/scratch/eguzys/padre_env/lib/python3.11/site-packages/torch/_weights_only_unpickler.py", line 541, in load
+    self.append(self.persistent_load(pid))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/work/scratch/eguzys/padre_env/lib/python3.11/site-packages/torch/serialization.py", line 2154, in persistent_load
+    typed_storage = load_tensor(
+                    ^^^^^^^^^^^^
+  File "/work/scratch/eguzys/padre_env/lib/python3.11/site-packages/torch/serialization.py", line 2116, in load_tensor
+    wrap_storage = restore_location(storage, location)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/work/scratch/eguzys/padre_env/lib/python3.11/site-packages/torch/serialization.py", line 734, in default_restore_location
+    result = fn(storage, location)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "/work/scratch/eguzys/padre_env/lib/python3.11/site-packages/torch/serialization.py", line 667, in _deserialize
+    device = _validate_device(location, backend_name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/work/scratch/eguzys/padre_env/lib/python3.11/site-packages/torch/serialization.py", line 634, in _validate_device
+    raise RuntimeError(
+RuntimeError: Attempting to deserialize object on a CUDA device but torch.cuda.is_available() is False. If you are running on a CPU-only machine, please use torch.load with map_location=torch.device('cpu') to map your storages to the CPU.
+
+>>> numbOfNodes -> 5
+=== ffn_n5  (N=5, policy=trained, n=100) ===
+/work/scratch/eguzys/padre_env/lib/python3.11/site-packages/torch/cuda/__init__.py:1061: UserWarning: Can't initialize NVML
+  raw_cnt = _raw_device_count_nvml()
+/work/scratch/eguzys/padre_env/lib/python3.11/site-packages/torchrl/envs/libs/pettingzoo.py:281: UserWarning: PettingZoo in TorchRL is tested using version == 1.24.3 , If you are using a different version and are experiencing compatibility issues,please raise an issue in the TorchRL github.
+  warnings.warn(
+/work/scratch/eguzys/padre_env/lib/python3.11/site-packages/torchrl/collectors/_base.py:1045: DeprecationWarning: SyncDataCollector has been deprecated and will be removed in v0.13. Please use Collector instead.
+  warnings.warn(
+/work/scratch/eguzys/padre_env/lib/python3.11/site-packages/torchrl/collectors/_single.py:911: UserWarning: total_frames (5000000) is not exactly divisible by frames_per_batch (6000). This means 4000 additional frames will be collected.To silence this message, set the environment variable RL_WARNINGS to False.
+  warnings.warn(
+Loading checkpoint: /work/projects/eguzys/code/src/out/benchmarl/ffn_n5/normalizedmappo_static_mlp__45e092f1_26_05_29-15_58_45/checkpoints/checkpoint_3960000.pt
+Traceback (most recent call last):
+  File "/work/projects/eguzys/code/src/evaluation/evaluate.py", line 257, in <module>
+    main()
+  File "/work/projects/eguzys/code/src/evaluation/evaluate.py", line 140, in main
+    action_fn, task_config = load_trained_policy(str(ckpt_path), device)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/work/projects/eguzys/code/src/evaluation/policies.py", line 50, in load_trained_policy
+    policy, task_config = _load_via_reload_from_file(ckpt, device)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/work/projects/eguzys/code/src/evaluation/policies.py", line 129, in _load_via_reload_from_file
+    experiment = Experiment.reload_from_file(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/work/scratch/eguzys/padre_env/lib/python3.11/site-packages/benchmarl/experiment/experiment.py", line 1059, in reload_from_file
+    experiment = Experiment(
+                 ^^^^^^^^^^^
+  File "/work/scratch/eguzys/padre_env/lib/python3.11/site-packages/benchmarl/experiment/experiment.py", line 379, in __init__
+    self._load_experiment()
+  File "/work/scratch/eguzys/padre_env/lib/python3.11/site-packages/benchmarl/experiment/experiment.py", line 1014, in _load_experiment
+    loaded_dict: OrderedDict = torch.load(
+                               ^^^^^^^^^^^
+  File "/work/scratch/eguzys/padre_env/lib/python3.11/site-packages/torch/serialization.py", line 1570, in load
+    return _load(
+           ^^^^^^
+  File "/work/scratch/eguzys/padre_env/lib/python3.11/site-packages/torch/serialization.py", line 2190, in _load
+    result = unpickler.load()
+             ^^^^^^^^^^^^^^^^
+  File "/work/scratch/eguzys/padre_env/lib/python3.11/site-packages/torch/_weights_only_unpickler.py", line 541, in load
+    self.append(self.persistent_load(pid))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/work/scratch/eguzys/padre_env/lib/python3.11/site-packages/torch/serialization.py", line 2154, in persistent_load
+    typed_storage = load_tensor(
+                    ^^^^^^^^^^^^
+  File "/work/scratch/eguzys/padre_env/lib/python3.11/site-packages/torch/serialization.py", line 2116, in load_tensor
+    wrap_storage = restore_location(storage, location)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/work/scratch/eguzys/padre_env/lib/python3.11/site-packages/torch/serialization.py", line 734, in default_restore_location
+    result = fn(storage, location)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "/work/scratch/eguzys/padre_env/lib/python3.11/site-packages/torch/serialization.py", line 667, in _deserialize
+    device = _validate_device(location, backend_name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/work/scratch/eguzys/padre_env/lib/python3.11/site-packages/torch/serialization.py", line 634, in _validate_device
+    raise RuntimeError(
+RuntimeError: Attempting to deserialize object on a CUDA device but torch.cuda.is_available() is False. If you are running on a CPU-only machine, please use torch.load with map_location=torch.device('cpu') to map your storages to the CPU.
+
+>>> numbOfNodes -> 4
+=== st_n4  (N=4, policy=trained, n=100) ===

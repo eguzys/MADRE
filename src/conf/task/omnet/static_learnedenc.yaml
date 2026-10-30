@@ -1,0 +1,20 @@
+defaults:
+  - _self_
+
+# 1000, NOT 500. The jammer fires at step 500 (RLBridge.cc jammerActivateStep_).
+# At ep_length=500 every training episode is truncated EXACTLY when the jammer
+# activates, so the policy never sees a jammed world -- and the whole contested-EM
+# premise is absent from training.
+#
+# MUST MATCH *.rlBridge.maxSteps in omnetpp.ini.
+ep_length: 1000
+
+# Identical to omnet/static (conf/task/omnet/static.yaml) except this ONE
+# flag: the per-user set encoder trains end-to-end from the RL reward
+# instead of being the frozen reconstruction-trained autoencoder. See
+# omnet_env.py's build_drone_tokens() encoder_mode="learned" branch and
+# architectures/user_encoder.py's "omnet" OBS_LAYOUTS entry. Pair with
+# model.encoder_mode=learned, model.obs_layout=omnet, model.max_users=25
+# (MAX_USERS_CAP) on the CLI -- the padre_* model yamls default to
+# max_users=20/obs_layout=padre for the PADRE track and must be overridden.
+encoder_mode: learned

@@ -1,0 +1,16 @@
+name: padre_gat
+
+latent_dim: 64
+n_heads: 4
+n_layers: 2
+rho_norm: 0.6
+dropout: 0.1
+# gat_model.py has the learned user-set encoder, so these
+# three fields exist on GATConfig exactly as they do on padre_st /
+# padre_deepsets / padre_ffn. Defaults are the PADRE track's; the OMNeT track
+# overrides all three via train_omnet_arton.sh's $MODEL_ENC_OVERRIDES
+# (encoder_mode=learned obs_layout=omnet max_users=25). run.py's coherence gate
+# hard-fails if they disagree with task.encoder_mode.
+encoder_mode: frozen
+max_users: 20
+obs_layout: padre

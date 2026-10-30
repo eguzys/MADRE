@@ -1,0 +1,22 @@
+defaults:
+  - _self_
+
+# Learned-encoder sibling of raw.yaml: identical env params, only
+# encoder_mode differs (frozen -> learned). Keep every other field in sync
+# with raw.yaml by hand -- there is no config inheritance here, so if
+# raw.yaml's env params change, mirror the change here too.
+numbOfNodes: 4
+numbOfJammers: 1
+numbOfUsers: [5, 20]
+ep_length: 1000
+state_loss_rate: 0.3
+self_flag: true
+aoi: true
+history_K: 1
+mask: true
+obs_wrapper: raw
+# learned: no pooling in the env -- padded raw user tokens are emitted
+# instead (max_users = numbOfUsers upper bound above = 20), pooled inside
+# each model by its own trainable encoder submodule. The model config's
+# encoder_mode AND max_users must match this.
+encoder_mode: learned

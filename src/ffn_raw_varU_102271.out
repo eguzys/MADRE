@@ -1,0 +1,7 @@
+
+CondaError: Run 'conda init' before 'conda activate'
+
+Traceback (most recent call last):
+  File "/work/projects/eguzys/code/src/run.py", line 12, in <module>
+    import hydra
+ModuleNotFoundError: No module named 'hydra'

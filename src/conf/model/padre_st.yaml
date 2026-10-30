@@ -1,0 +1,19 @@
+# encoder_mode: "frozen" (default, byte-identical to pre-encoder_mode
+# behaviour) | "learned" (own from-scratch trainable user-set encoder,
+# max_users must match the task's numbOfUsers upper bound).
+# obs_layout: "padre" (default) | "omnet" -- selects the own_state/user-token
+# column geometry the learned-mode reassembly uses (architectures/
+# user_encoder.py's OBS_LAYOUTS). Only consulted when encoder_mode=="learned".
+# The OMNeT track needs max_users=25 (MAX_USERS_CAP), NOT this file's 20 --
+# override both on the CLI for an omnet/*_learnedenc run.
+name: padre_st
+
+latent_dim: 64
+n_heads: 4
+n_layers: 2
+dim_feedforward: 256
+dropout: 0.1
+use_mask: true
+encoder_mode: frozen
+max_users: 20
+obs_layout: padre

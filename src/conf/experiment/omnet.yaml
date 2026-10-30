@@ -1,0 +1,49 @@
+defaults:
+  - padre
+  - _self_
+
+# OMNeT episodes are a real ~1000-step subprocess-driven simulation, not a
+# cheap in-process PADRE episode. BenchMARL's base_experiment defaults
+# (evaluation_interval=120_000, evaluation_episodes=10) are calibrated for
+# PADRE and will add ~35 HOURS of serial evaluation to an OMNeT run --
+# looks exactly like a hang, not a crash. Note evaluation ALWAYS runs once
+# on the first training iteration regardless of evaluation_interval
+# (BenchMARL's `self.n_iters_performed == 0` OR clause in experiment.py) --
+# raising the interval bounds the RECURRING cost, not the first one.
+# evaluation_episodes bounds that unavoidable first pass instead.
+# The interval must be smaller than the run's frame budget: an interval that
+# exceeds max_n_frames means only the frame-0 evaluation (the untrained
+# network) is ever logged, and check_stage2_baseline.py would grade that.
+#
+# 150000 gives 5 recurring evals across a 750k-frame Stage-2 run, so the guard
+# has a real window to average over and the curve shows whether the policy is
+# still improving at the cutoff. episodes 2 -> 10 because 2 episodes against a
+# per-seed CV of ~0.20 is +/-14% standard error on the mean, which cannot
+# resolve the ~16-20% margin between the trivial baselines and greedy -- the
+# very quantity this eval exists to measure. Cost: 5 x 10 x ~4.3 min ~ 3.6 h
+# of serial eval on a run that already takes ~45 h.
+evaluation_interval: 150000
+evaluation_episodes: 10
+
+# Serial collection = 10 envs x ~4.3 min/episode = ~43 min per 6000-frame
+# batch. Not optional for the realism runs (OMNET.md S13.5).
+parallel_collection: true
+
+# Pinned explicitly so seed_watchdog.sh reads the SAME number the run uses.
+on_policy_n_envs_per_worker: 16
+
+# Critic stability: BenchMARL's Experiment._optimizer_loop builds
+# a SEPARATE Adam optimizer per loss ("loss_objective" / "loss_critic") and
+# calls _grad_clip independently on each -- the critic already gets its own
+# grad-norm clip via these two fields, inherited unchanged from BenchMARL's
+# base_experiment.yaml default (clip_grad_norm=True, clip_grad_val=5). Pinned
+# here explicitly (same value) so it's documented as load-bearing for critic
+# stability rather than an easy-to-miss inherited default -- the main
+# mechanism is the constant reward scale (REWARD_SCALE in
+# src/benchmarl_padre/omnet_common.py) that keeps GAE value targets at
+# O(1-10); this clip is the safety rail.
+# Note: the "grad_norm_loss_critic" training scalar is the PRE-clip norm
+# (torch.nn.utils.clip_grad_norm_'s return value), not the post-clip one --
+# a huge logged grad norm does not mean this clip isn't firing.
+clip_grad_norm: true
+clip_grad_val: 5

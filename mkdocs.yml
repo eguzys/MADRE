@@ -1,0 +1,65 @@
+site_name: MANETNodesRelocation
+plugins:
+  - mkdocstrings:
+      handlers:
+        python:
+          paths:
+            - src/MANET
+            - src/Utils
+            - src/OptimumFinder
+            - src/train_MANETAgent.py
+            - src/evaluate_MANETAgents.py
+            - src/visualize_MANETAgents.py
+
+nav:
+  - Home: index.md
+  - Getting Started: Getting Started.md
+  - API Reference:
+      - MANET:
+          - Agents: reference/MANET/Agents.md
+          - Attackers: reference/MANET/Attackers.md
+          - Components: reference/MANET/Components.md
+          - ConditionStrategies: reference/MANET/ConditionStrategy.md
+          - Environments: reference/MANET/Environments.md
+          - GUI: reference/MANET/GUI.md
+          - Routing: reference/MANET/Routing.md
+          - Network: reference/MANET/Network.md
+          - Observation Wrappers: reference/MANET/ObservationWrappers.md
+          - Reward Wrappers: reference/MANET/RewardWrappers.md
+      - OptimumFinder:
+          - ExhaustiveSearch: reference/OptimumFinder/ExhaustiveSearch.md
+          - MINLP: reference/OptimumFinder/MINLP.md
+      - Utils:
+          - Training Utils: reference/Utils/TrainingUtils.md
+          - MANET Utils: reference/Utils/MANETUtils.md
+      - Train MANET Agent: reference/train_MANETAgent.md
+      - Evaluate MANET Agent: reference/evaluate_MANETAgents.md
+          
+
+theme:
+  name: material
+  icon:
+    logo: material/access-point-network
+    repo: fontawesome/brands/github
+  palette:
+    scheme: slate
+    primary: yellow
+    accent: pink
+
+
+# URL of the documentation site
+site_url: https://silaas.github.io/MANETNodesRelocation/
+
+# URL of the main code repository
+repo_url: https://github.com/silaas/MANETNodesRelocation
+
+markdown_extensions:
+  - pymdownx.arithmatex:
+      generic: true
+  - def_list
+  - pymdownx.tasklist:
+      custom_checkbox: true
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js

@@ -1,0 +1,77 @@
+% fig:density, BEACON ON (PDUB<chi>_<rung>, density_scorer_ub.sh), 100 users, 1200 m, cluster spawn.
+% m = mean/250*1000 [bit/s] rounded to 100; ep/em = ratio-of-means 95% CI vs the beacon-on greedy ENUB_N100_<chi>
+% (arm: episodes; greedy: episodes) x greedy mean, rounded to 100 -- the estimator of the current figure.
+% chi=0.2/0.4: k=3 training seeds (L512: k=2, seeds 2+3), two-level bootstrap; other chi: ONE seed (L512: seed 2), episode-level bars.
+% scored by results/density_beacon_k3_oct07/score_density_k3.py. Nothing here is in the paper.
+
+% --- Greedy (dashed, no bars): ENUB_N100_<chi> ---
+    c     m        \\
+    5     4900      \\
+    10    10500     \\
+    20    23800     \\
+    40    49700     \\
+    60    75000     \\
+    100   121500    \\
+
+% --- L=8 ---
+    c     m        ep      em     \\
+    5     8900     4100    2600   \\
+    10    18100    5600    4200   \\
+    20    41500    10400   8000   \\
+    40    76000    12500   10800  \\
+    60    90600    12200   10600  \\
+    100   143200   13000   12000  \\
+
+% --- L=16 ---   NEW LINE (suggest teal!60!black, mark=otimes*, as in fig:separation)
+    c     m        ep      em     \\
+    5     15100    6600    4100   \\
+    10    25500    8000    5900   \\
+    20    46000    12300   10200  \\
+    40    84800    13600   11500  \\
+    60    115800   13700   12200  \\
+    100   160100   15200   14000  \\
+
+% --- L=32 ---
+    c     m        ep      em     \\
+    5     14400    6400    4100   \\
+    10    20800    6800    4900   \\
+    20    47000    10400   8300   \\
+    40    81900    13500   12000  \\
+    60    97600    11800   10500  \\
+    100   141700   13400   12300  \\
+
+% --- L=64 ---   = \datamadre (preamble; also the MADRE line of fig:baselines, which skips index 3 = c40)
+    c     m        ep      em     \\
+    5     20300    8700    5400   \\
+    10    36600    10800   7800   \\
+    20    67800    15200   11700  \\
+    40    102800   14000   11900  \\
+    60    128800   15200   13400  \\
+    100   165900   14400   13200  \\
+
+% --- L=128 ---
+    c     m        ep      em     \\
+    5     23200    10000   6000   \\
+    10    39300    11200   8200   \\
+    20    66700    14100   11100  \\
+    40    101100   12800   11000  \\
+    60    128800   14300   12800  \\
+    100   156500   13400   12400  \\
+
+% --- L=256 ---
+    c     m        ep      em     \\
+    5     12700    5800    3500   \\
+    10    28500    8700    6300   \\
+    20    44400    9400    7200   \\
+    40    76500    9600    8100   \\
+    60    105600   12000   11100  \\
+    100   143000   12300   11300  \\
+
+% --- L=512 ---
+    c     m        ep      em     \\
+    5     6500     3100    2000   \\
+    10    16000    5200    3700   \\
+    20    30900    7400    5800   \\
+    40    58200    8500    7000   \\
+    60    80800    9400    8300   \\
+    100   118700   10500   9600   \\

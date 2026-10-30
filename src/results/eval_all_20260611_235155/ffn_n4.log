@@ -1,0 +1,127 @@
+/work/scratch/eguzys/padre_env/lib/python3.11/site-packages/torchrl/envs/libs/pettingzoo.py:281: UserWarning: PettingZoo in TorchRL is tested using version == 1.24.3 , If you are using a different version and are experiencing compatibility issues,please raise an issue in the TorchRL github.
+  warnings.warn(
+/work/scratch/eguzys/padre_env/lib/python3.11/site-packages/torchrl/collectors/_base.py:1045: DeprecationWarning: SyncDataCollector has been deprecated and will be removed in v0.13. Please use Collector instead.
+  warnings.warn(
+Loading checkpoint: /work/projects/eguzys/code/src/out/benchmarl/ffn_probe/normalizedmappo_static_mlp__5540bc8e_26_05_27-01_39_19/checkpoints/checkpoint_4320000.pt
+
+Reloaded experiment normalizedmappo_static_mlp__5540bc8e_26_05_27-01_39_19 from /work/projects/eguzys/code/src/out/benchmarl/ffn_probe/normalizedmappo_static_mlp__5540bc8e_26_05_27-01_39_19/checkpoints/checkpoint_4320000.pt.
+Policy loaded. Task config: {'numbOfNodes': 4, 'numbOfJammers': 1, 'numbOfUsers': 15, 'ep_length': 1000, 'state_loss_rate': 0.3, 'self_flag': True, 'aoi': True, 'history_K': 1, 'mask': True}
+
+Running 100 seeded episode(s)  [policy=trained, render=False, device=cuda]
+
+  ep   0 seed=   0  reward=2963.605  tp=20.576 Mbps  util=0.069  len=1000  [trunc]
+  ep   1 seed=   1  reward= 513.057  tp= 1.099 Mbps  util=0.004  len=1000  [trunc]
+  ep   2 seed=   2  reward=3304.349  tp=27.777 Mbps  util=0.093  len=1000  [trunc]
+  ep   3 seed=   3  reward=1632.601  tp= 5.221 Mbps  util=0.017  len=1000  [trunc]
+  ep   4 seed=   4  reward= 502.854  tp= 0.796 Mbps  util=0.003  len=1000  [trunc]
+  ep   5 seed=   5  reward=3144.306  tp=22.759 Mbps  util=0.076  len=1000  [trunc]
+  ep   6 seed=   6  reward=3838.475  tp=51.221 Mbps  util=0.171  len=1000  [trunc]
+  ep   7 seed=   7  reward=1387.486  tp= 4.671 Mbps  util=0.016  len=1000  [trunc]
+  ep   8 seed=   8  reward=2887.662  tp=18.043 Mbps  util=0.060  len=1000  [trunc]
+  ep   9 seed=   9  reward=3143.941  tp=23.744 Mbps  util=0.079  len=1000  [trunc]
+  ep  10 seed=  10  reward=1956.230  tp= 6.964 Mbps  util=0.023  len=1000  [trunc]
+  ep  11 seed=  11  reward=  56.980  tp= 0.159 Mbps  util=0.001  len=1000  [trunc]
+  ep  12 seed=  12  reward= 625.921  tp= 1.042 Mbps  util=0.003  len=1000  [trunc]
+  ep  13 seed=  13  reward=   1.394  tp= 0.001 Mbps  util=0.000  len=1000  [trunc]
+  ep  14 seed=  14  reward=  47.622  tp= 0.164 Mbps  util=0.001  len=1000  [trunc]
+  ep  15 seed=  15  reward=1490.919  tp= 7.765 Mbps  util=0.026  len=1000  [trunc]
+  ep  16 seed=  16  reward=  12.185  tp= 0.017 Mbps  util=0.000  len=1000  [trunc]
+  ep  17 seed=  17  reward= 623.889  tp= 1.011 Mbps  util=0.003  len=1000  [trunc]
+  ep  18 seed=  18  reward=1707.748  tp= 9.018 Mbps  util=0.030  len=1000  [trunc]
+  ep  19 seed=  19  reward=1207.424  tp= 2.441 Mbps  util=0.008  len=1000  [trunc]
+  ep  20 seed=  20  reward= 424.756  tp= 0.612 Mbps  util=0.002  len=1000  [trunc]
+  ep  21 seed=  21  reward=   0.000  tp= 0.000 Mbps  util=0.000  len=1000  [trunc]
+  ep  22 seed=  22  reward=   1.786  tp= 0.002 Mbps  util=0.000  len=1000  [trunc]
+  ep  23 seed=  23  reward=1497.689  tp= 4.224 Mbps  util=0.014  len=1000  [trunc]
+  ep  24 seed=  24  reward= 994.231  tp= 3.551 Mbps  util=0.012  len=1000  [trunc]
+  ep  25 seed=  25  reward=3486.950  tp=34.517 Mbps  util=0.115  len=1000  [trunc]
+  ep  26 seed=  26  reward= 292.611  tp= 0.736 Mbps  util=0.002  len=1000  [trunc]
+  ep  27 seed=  27  reward=   0.000  tp= 0.000 Mbps  util=0.000  len=1000  [trunc]
+  ep  28 seed=  28  reward=3860.463  tp=46.723 Mbps  util=0.156  len=1000  [trunc]
+  ep  29 seed=  29  reward=2686.412  tp=14.818 Mbps  util=0.049  len=1000  [trunc]
+  ep  30 seed=  30  reward=2941.718  tp=19.235 Mbps  util=0.064  len=1000  [trunc]
+  ep  31 seed=  31  reward=   0.000  tp= 0.000 Mbps  util=0.000  len=1000  [trunc]
+  ep  32 seed=  32  reward=  65.724  tp= 0.087 Mbps  util=0.000  len=1000  [trunc]
+  ep  33 seed=  33  reward=2352.148  tp=10.410 Mbps  util=0.035  len=1000  [trunc]
+  ep  34 seed=  34  reward=   0.000  tp= 0.000 Mbps  util=0.000  len=1000  [trunc]
+  ep  35 seed=  35  reward=  92.008  tp= 0.146 Mbps  util=0.000  len=1000  [trunc]
+  ep  36 seed=  36  reward=2824.881  tp=20.630 Mbps  util=0.069  len=1000  [trunc]
+  ep  37 seed=  37  reward=2851.446  tp=18.316 Mbps  util=0.061  len=1000  [trunc]
+  ep  38 seed=  38  reward= 537.531  tp= 0.784 Mbps  util=0.003  len=1000  [trunc]
+  ep  39 seed=  39  reward=  14.771  tp= 0.020 Mbps  util=0.000  len=1000  [trunc]
+  ep  40 seed=  40  reward=   0.000  tp= 0.000 Mbps  util=0.000  len=1000  [trunc]
+  ep  41 seed=  41  reward= 943.737  tp= 1.802 Mbps  util=0.006  len=1000  [trunc]
+  ep  42 seed=  42  reward= 406.168  tp= 0.536 Mbps  util=0.002  len=1000  [trunc]
+  ep  43 seed=  43  reward= 109.361  tp= 0.194 Mbps  util=0.001  len=1000  [trunc]
+  ep  44 seed=  44  reward= 761.480  tp= 2.150 Mbps  util=0.007  len=1000  [trunc]
+  ep  45 seed=  45  reward=1485.005  tp= 3.645 Mbps  util=0.012  len=1000  [trunc]
+  ep  46 seed=  46  reward=2964.022  tp=21.500 Mbps  util=0.072  len=1000  [trunc]
+  ep  47 seed=  47  reward=   0.000  tp= 0.000 Mbps  util=0.000  len=1000  [trunc]
+  ep  48 seed=  48  reward=   0.000  tp= 0.000 Mbps  util=0.000  len=1000  [trunc]
+  ep  49 seed=  49  reward= 808.527  tp= 1.246 Mbps  util=0.004  len=1000  [trunc]
+  ep  50 seed=  50  reward= 570.132  tp= 0.799 Mbps  util=0.003  len=1000  [trunc]
+  ep  51 seed=  51  reward=   0.000  tp= 0.000 Mbps  util=0.000  len=1000  [trunc]
+  ep  52 seed=  52  reward=   0.000  tp= 0.000 Mbps  util=0.000  len=1000  [trunc]
+  ep  53 seed=  53  reward= 890.578  tp= 2.636 Mbps  util=0.009  len=1000  [trunc]
+  ep  54 seed=  54  reward=  22.193  tp= 0.046 Mbps  util=0.000  len=1000  [trunc]
+  ep  55 seed=  55  reward=   0.000  tp= 0.000 Mbps  util=0.000  len=1000  [trunc]
+  ep  56 seed=  56  reward=   0.000  tp= 0.000 Mbps  util=0.000  len=1000  [trunc]
+  ep  57 seed=  57  reward=2472.174  tp=10.940 Mbps  util=0.036  len=1000  [trunc]
+  ep  58 seed=  58  reward=2757.772  tp=17.183 Mbps  util=0.057  len=1000  [trunc]
+  ep  59 seed=  59  reward=  34.809  tp= 0.044 Mbps  util=0.000  len=1000  [trunc]
+  ep  60 seed=  60  reward=1349.813  tp= 2.942 Mbps  util=0.010  len=1000  [trunc]
+  ep  61 seed=  61  reward=  91.276  tp= 0.725 Mbps  util=0.002  len=1000  [trunc]
+  ep  62 seed=  62  reward=2095.692  tp= 8.105 Mbps  util=0.027  len=1000  [trunc]
+  ep  63 seed=  63  reward=   0.000  tp= 0.000 Mbps  util=0.000  len=1000  [trunc]
+  ep  64 seed=  64  reward=1466.990  tp=18.206 Mbps  util=0.061  len=500  [trunc]
+  ep  65 seed=  65  reward=  23.933  tp= 0.033 Mbps  util=0.000  len=1000  [trunc]
+  ep  66 seed=  66  reward=4115.241  tp=62.635 Mbps  util=0.209  len=1000  [trunc]
+  ep  67 seed=  67  reward=   0.000  tp= 0.000 Mbps  util=0.000  len=1000  [trunc]
+  ep  68 seed=  68  reward=3531.688  tp=35.704 Mbps  util=0.119  len=1000  [trunc]
+  ep  69 seed=  69  reward=  62.482  tp= 0.075 Mbps  util=0.000  len=1000  [trunc]
+  ep  70 seed=  70  reward=   6.817  tp= 0.009 Mbps  util=0.000  len=1000  [trunc]
+  ep  71 seed=  71  reward= 314.691  tp= 0.553 Mbps  util=0.002  len=1000  [trunc]
+  ep  72 seed=  72  reward=  76.156  tp= 0.097 Mbps  util=0.000  len=1000  [trunc]
+  ep  73 seed=  73  reward=   0.000  tp= 0.000 Mbps  util=0.000  len=1000  [trunc]
+  ep  74 seed=  74  reward= 102.472  tp= 0.164 Mbps  util=0.001  len=1000  [trunc]
+  ep  75 seed=  75  reward=2840.987  tp=18.485 Mbps  util=0.062  len=1000  [trunc]
+  ep  76 seed=  76  reward=2638.650  tp=14.623 Mbps  util=0.049  len=1000  [trunc]
+  ep  77 seed=  77  reward= 180.035  tp= 0.247 Mbps  util=0.001  len=1000  [trunc]
+  ep  78 seed=  78  reward=   0.000  tp= 0.000 Mbps  util=0.000  len=1000  [trunc]
+  ep  79 seed=  79  reward= 991.478  tp= 2.197 Mbps  util=0.007  len=1000  [trunc]
+  ep  80 seed=  80  reward=4100.611  tp=65.859 Mbps  util=0.220  len=1000  [trunc]
+  ep  81 seed=  81  reward=3499.713  tp=37.151 Mbps  util=0.124  len=1000  [trunc]
+  ep  82 seed=  82  reward=   0.000  tp= 0.000 Mbps  util=0.000  len=1000  [trunc]
+  ep  83 seed=  83  reward=1850.178  tp= 7.264 Mbps  util=0.024  len=1000  [trunc]
+  ep  84 seed=  84  reward=   0.000  tp= 0.000 Mbps  util=0.000  len=1000  [trunc]
+  ep  85 seed=  85  reward=2942.169  tp=23.555 Mbps  util=0.079  len=1000  [trunc]
+  ep  86 seed=  86  reward=   0.000  tp= 0.000 Mbps  util=0.000  len=1000  [trunc]
+  ep  87 seed=  87  reward= 915.416  tp= 3.188 Mbps  util=0.011  len=1000  [trunc]
+  ep  88 seed=  88  reward=   0.000  tp= 0.000 Mbps  util=0.000  len=1000  [trunc]
+  ep  89 seed=  89  reward= 579.619  tp= 0.877 Mbps  util=0.003  len=1000  [trunc]
+  ep  90 seed=  90  reward=   0.000  tp= 0.000 Mbps  util=0.000  len=1000  [trunc]
+  ep  91 seed=  91  reward=   0.000  tp= 0.000 Mbps  util=0.000  len=1000  [trunc]
+  ep  92 seed=  92  reward=3108.945  tp=22.259 Mbps  util=0.074  len=1000  [trunc]
+  ep  93 seed=  93  reward= 655.785  tp= 1.686 Mbps  util=0.006  len=1000  [trunc]
+  ep  94 seed=  94  reward=2851.181  tp=20.856 Mbps  util=0.070  len=1000  [trunc]
+  ep  95 seed=  95  reward=   0.000  tp= 0.000 Mbps  util=0.000  len=1000  [trunc]
+  ep  96 seed=  96  reward= 364.243  tp= 1.479 Mbps  util=0.005  len=1000  [trunc]
+  ep  97 seed=  97  reward=  47.326  tp= 0.129 Mbps  util=0.000  len=1000  [trunc]
+  ep  98 seed=  98  reward=3140.281  tp=23.303 Mbps  util=0.078  len=1000  [trunc]
+  ep  99 seed=  99  reward= 212.374  tp= 0.338 Mbps  util=0.001  len=1000  [trunc]
+
+────────────────────────────────────────────────────────
+  Aggregate statistics  (100 seeded episodes)
+────────────────────────────────────────────────────────
+  metric                                mean       std
+────────────────────────────────────────────────────────
+  episode_reward_total             1143.5597  1300.4903
+  mean_throughput_mbps                8.1477   13.6344
+  mean_utilization                    0.0272    0.0454
+  episode_length                    995.0000   49.7494
+  episode_outcome                     0.0000    0.0000
+  fraction_committed_steps               nan       nan
+────────────────────────────────────────────────────────
+
+
+Results written to: /work/projects/eguzys/code/src/evaluation/results/checkpoint_4320000_trained_20260612_002651

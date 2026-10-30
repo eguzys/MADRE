@@ -1,0 +1,25 @@
+/home/emilis/pythonEnviroment/padre/lib/python3.11/site-packages/benchmarl/environments/common.py:41: UserWarning: TaskConfig python dataclass not found, task is being loaded without type checks
+  warnings.warn(
+Loading checkpoint: /home/emilis/Documents/thesis/code/src/out/cluster/45e092f1/checkpoint_3960000.pt
+Traceback (most recent call last):
+  File "/home/emilis/Documents/thesis/code/src/evaluation/evaluate.py", line 257, in <module>
+    main()
+  File "/home/emilis/Documents/thesis/code/src/evaluation/evaluate.py", line 140, in main
+    action_fn, task_config = load_trained_policy(str(ckpt_path), device)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/emilis/Documents/thesis/code/src/evaluation/policies.py", line 52, in load_trained_policy
+    policy, task_config = _load_via_hydra_compose(ckpt, device)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/emilis/Documents/thesis/code/src/evaluation/policies.py", line 210, in _load_via_hydra_compose
+    _psd_keys = list(torch.load(str(ckpt), map_location="cpu")["collector"]["policy_state_dict"].keys())
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/emilis/pythonEnviroment/padre/lib/python3.11/site-packages/torch/serialization.py", line 1530, in load
+    with _open_file_like(f, "rb") as opened_file:
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/emilis/pythonEnviroment/padre/lib/python3.11/site-packages/torch/serialization.py", line 795, in _open_file_like
+    return _open_file(name_or_buffer, mode)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/emilis/pythonEnviroment/padre/lib/python3.11/site-packages/torch/serialization.py", line 776, in __init__
+    super().__init__(open(name, mode))  # noqa: SIM115
+                     ^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/home/emilis/Documents/thesis/code/src/out/cluster/45e092f1/checkpoint_3960000.pt'

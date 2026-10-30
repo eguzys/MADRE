@@ -1,0 +1,24 @@
+# Standalone compile test for our two modules.
+# Only checks syntax/API correctness; doesn't link a real binary.
+
+CXX      = clang++
+INET     = $(HOME)/Documents/thesis/inet4.6
+OMNETPP  = $(HOME)/Documents/thesis/omnetpp-6.4.0
+
+CXXFLAGS = -std=c++17 -fPIC -c \
+           -I. \
+           -I$(INET)/src \
+           -I$(OMNETPP)/include \
+           -I/usr/include \
+           -DNDEBUG
+
+all: RLBridge.o RLControlledMobility.o
+
+RLBridge.o: RLBridge.cc RLBridge.h
+	$(CXX) $(CXXFLAGS) RLBridge.cc -o RLBridge.o
+
+RLControlledMobility.o: RLControlledMobility.cc RLControlledMobility.h RLBridge.h
+	$(CXX) $(CXXFLAGS) RLControlledMobility.cc -o RLControlledMobility.o
+
+clean:
+	rm -f *.o

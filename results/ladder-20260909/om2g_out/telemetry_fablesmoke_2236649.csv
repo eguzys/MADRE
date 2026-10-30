@@ -1,0 +1,2 @@
+track,arm,worker,episode,steps,ctrl_share_of_channel,peer_available_frac,peer_fresh_frac,ctrl_bps_tx,ctrl_bps_rx,data_bps_est,channel_busy,peers_fresh,peers_stale,peers_blank
+OM2G,compressed,0,1,13,0.03985723076923076,0.1675824175824176,0.09340659340659341,9964.307692307691,18230.153846153848,2249185.846153846,0.20145585262149013,5.230769230769231,4.153846153846154,46.61538461538461

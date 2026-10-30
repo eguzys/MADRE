@@ -1,0 +1,34 @@
+/home/emilis/pythonEnviroment/padre/lib/python3.11/site-packages/benchmarl/environments/common.py:41: UserWarning: TaskConfig python dataclass not found, task is being loaded without type checks
+  warnings.warn(
+/home/emilis/pythonEnviroment/padre/lib/python3.11/site-packages/torchrl/envs/libs/pettingzoo.py:281: UserWarning: PettingZoo in TorchRL is tested using version == 1.24.3 , If you are using a different version and are experiencing compatibility issues,please raise an issue in the TorchRL github.
+  warnings.warn(
+/home/emilis/Documents/thesis/code/src/architectures/st_model.py:77: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  self.attention = nn.TransformerEncoder(encoder_layer, num_layers=n_layers)
+/home/emilis/pythonEnviroment/padre/lib/python3.11/site-packages/torchrl/collectors/_base.py:1045: DeprecationWarning: SyncDataCollector has been deprecated and will be removed in v0.13. Please use Collector instead.
+  warnings.warn(
+Loading checkpoint: /home/emilis/Documents/thesis/code/src/out/cluster/st_probe/checkpoint_4800000.pt
+Policy loaded. Task config: {'numbOfNodes': 5, 'numbOfJammers': 1, 'numbOfUsers': 15, 'ep_length': 1000, 'state_loss_rate': 0.3, 'self_flag': True, 'aoi': True, 'history_K': 1, 'mask': True}
+
+Running 5 seeded episode(s)  [policy=trained, render=True, device=cuda]
+
+  ep   0 seed=   0  reward=3077.009  tp=25.099 Mbps  util=0.084  len=1000  [trunc]
+  ep   1 seed=   1  reward= 426.313  tp= 1.168 Mbps  util=0.004  len=1000  [trunc]
+  ep   2 seed=   2  reward= 139.425  tp= 0.306 Mbps  util=0.001  len=1000  [trunc]
+  ep   3 seed=   3  reward=1478.572  tp= 8.454 Mbps  util=0.028  len=1000  [trunc]
+  ep   4 seed=   4  reward=1607.372  tp= 4.416 Mbps  util=0.015  len=1000  [trunc]
+
+────────────────────────────────────────────────────────
+  Aggregate statistics  (5 seeded episodes)
+────────────────────────────────────────────────────────
+  metric                                mean       std
+────────────────────────────────────────────────────────
+  episode_reward_total             1345.7381  1037.6828
+  mean_throughput_mbps                7.8888    9.0689
+  mean_utilization                    0.0263    0.0302
+  episode_length                   1000.0000    0.0000
+  episode_outcome                     0.0000    0.0000
+  fraction_committed_steps               nan       nan
+────────────────────────────────────────────────────────
+
+
+Results written to: /home/emilis/Documents/thesis/code/src/evaluation/results/checkpoint_4800000_trained_20260529_154428

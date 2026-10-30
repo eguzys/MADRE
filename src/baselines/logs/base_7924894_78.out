@@ -1,0 +1,15 @@
+=== task=78 policy=random N=6 seeds=80..89 ===
+CAPACITY CLIFF WARNING: _link_capacity_bps returns exactly 0 when SNR < -10 dB (hard cutoff, not smooth decay).  If drones sit just outside radio range, reward gradient = 0 (dead zone).  Consider a smooth decay or reducing the -10 dB threshold if training stalls.
+  ep seed=  80  reward=  89176.1644  steps=1000
+  ep seed=  81  reward= 157176.7398  steps=1000
+  ep seed=  82  reward= 206775.8104  steps=1000
+  ep seed=  83  reward= 174085.5226  steps=1000
+  ep seed=  84  reward=  78766.3545  steps=1000
+  ep seed=  85  reward=  87175.0103  steps=1000
+  ep seed=  86  reward= 177117.6033  steps=1000
+  ep seed=  87  reward= 136745.1928  steps=1000
+  ep seed=  88  reward=  69802.0368  steps=1000
+  ep seed=  89  reward= 228367.6624  steps=1000
+
+Wrote 10 episode(s) to /cluster/scratch/eguzys/baselines/random_n6_s80.csv
+=== OK 11 lines ===

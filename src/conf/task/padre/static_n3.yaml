@@ -1,0 +1,16 @@
+defaults:
+  - _self_
+
+# Env params for PADRE anti-jamming task.
+# Must match PADRE's SB3 YAML for fair FFN baseline comparison.
+# Source of truth: src/examples/[wherever PADRE's training yaml lives]
+
+numbOfNodes: 3
+numbOfJammers: 1
+numbOfUsers: 15
+ep_length: 1000
+state_loss_rate: 0.3
+self_flag: true
+aoi: true
+history_K: 1
+mask: true

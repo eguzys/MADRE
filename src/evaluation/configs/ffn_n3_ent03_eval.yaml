@@ -1,0 +1,19 @@
+eval_args:
+  checkpoint: /home/emilis/Documents/thesis/code/src/out/benchmarl/ffn_n3_ent03/normalizedmappo_static_mlp__7fa06909_26_06_09-20_06_09/checkpoints/checkpoint_4560000.pt
+  condition: sinr
+  episodes: 20
+  policy: trained
+  render: false
+  seeds: null
+  spsa_a: 1.0
+  spsa_c: 1.0
+task_config:
+  aoi: true
+  ep_length: 1000
+  history_K: 1
+  mask: true
+  numbOfJammers: 1
+  numbOfNodes: 3
+  numbOfUsers: 15
+  self_flag: true
+  state_loss_rate: 0.3

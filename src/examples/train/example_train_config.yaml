@@ -1,0 +1,80 @@
+mode: train
+
+storing_and_logging:
+  model_dir: out/models
+  log_dir: out/logs
+  log_name: test
+
+model:
+  RL_model_name: PPO
+  architecture: ST
+
+env:
+  name: Static_MANETEnv
+  render: false
+  parameters:
+    numbOfNodes: 4
+    numbOfJammers:
+    - 0
+    - 5
+    numbOfUsers:
+    - 2
+    - 21
+    seed: 69
+    networkConnectedAtStart: true
+    jammersSpawnNextToUsers: true
+    allow_early_ep_finish: true
+    routing_func: sequential_max_flow
+    step_size: 2
+
+attacker:
+  model: Static_ClusterJammers
+  steps_till_jammer_active: 150
+  step_jammers_start_moving: 50
+
+obs_wrapper:
+  type: VS_iCOW
+  config:
+    nodes:
+      position: true
+      receivedSignal: false
+      interference: true
+      signalPower: true
+      trafficHosted: false
+      inCapacities: true
+      outCapacities: true
+      sensedSenderDemands: true
+      sensedReceiverDemands: true
+      inUserCount: true
+      outUserCount: true
+      inSenderCount: true
+      outSenderCount: false
+      inReceiverCount: false
+      outReceiverCount: true
+      closestUserDir: true
+      closestUserPos: false
+      closestSenderDir: true
+      closestSenderPos: false
+      closestReceiverDir: true
+      closestReceiverPos: false
+      closestUserInterference: true
+    
+    users: 
+      position: false
+      receivedSignal: false
+      interference: false
+      signalPower: false
+      offeredLoad: false
+      destination: false
+    capacity_matrix: false
+
+rew_wrapper:
+  type: LinearReward
+
+training:
+  timesteps: 10_000
+  ep_length: 15_000
+  save_freq: 1000
+  stat_size: 10
+
+  

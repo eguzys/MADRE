@@ -1,0 +1,25 @@
+>>> numbOfNodes -> 3
+=== ffn_n3  (N=3, policy=trained, n=100) ===
+/work/scratch/eguzys/padre_env/lib/python3.11/site-packages/torchrl/envs/libs/pettingzoo.py:281: UserWarning: PettingZoo in TorchRL is tested using version == 1.24.3 , If you are using a different version and are experiencing compatibility issues,please raise an issue in the TorchRL github.
+  warnings.warn(
+/work/scratch/eguzys/padre_env/lib/python3.11/site-packages/torchrl/collectors/_base.py:1045: DeprecationWarning: SyncDataCollector has been deprecated and will be removed in v0.13. Please use Collector instead.
+  warnings.warn(
+/work/scratch/eguzys/padre_env/lib/python3.11/site-packages/torchrl/collectors/_single.py:911: UserWarning: total_frames (5000000) is not exactly divisible by frames_per_batch (6000). This means 4000 additional frames will be collected.To silence this message, set the environment variable RL_WARNINGS to False.
+  warnings.warn(
+Exception in thread Thread-1 (start_gui):
+Traceback (most recent call last):
+  File "/work/scratch/eguzys/padre_env/lib/python3.11/threading.py", line 1045, in _bootstrap_inner
+    self.run()
+  File "/work/scratch/eguzys/padre_env/lib/python3.11/threading.py", line 982, in run
+    self._target(*self._args, **self._kwargs)
+  File "/work/projects/eguzys/code/src/MANET/Environments.py", line 1222, in start_gui
+    gui = MANETGUI(self.gui_queue, self)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/work/projects/eguzys/code/src/MANET/GUI.py", line 55, in __init__
+    super().__init__()
+  File "/work/scratch/eguzys/padre_env/lib/python3.11/tkinter/__init__.py", line 2345, in __init__
+    self.tk = _tkinter.create(screenName, baseName, className, interactive, wantobjects, useTk, sync, use)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_tkinter.TclError: no display name and no $DISPLAY environment variable
+[2026-06-11T23:49:43.211] error: *** STEP 98607.0 ON studgpu-node01 CANCELLED AT 2026-06-11T23:49:43 DUE to SIGNAL Terminated ***
+[2026-06-11T23:49:43.212] error: *** JOB 98607 ON studgpu-node01 CANCELLED AT 2026-06-11T23:49:43 DUE to SIGNAL Terminated ***

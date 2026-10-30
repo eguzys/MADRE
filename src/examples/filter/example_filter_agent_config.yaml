@@ -1,0 +1,34 @@
+agent_patterns:
+- patterns/to/your/models
+env_constr: Dynamic_MANETEnv
+eval_params:
+  allow_early_ep_finish: false
+  attackerModel:
+  - Static_GreedyJammers
+  - Static_ClusterJammers
+  - Static_TrafficJammers
+  deterministic: true
+  ep_length: 600
+  jammer_ep_steps: 200
+  jammersSpawnNextToUsers: false
+  n_eval_eps: 500
+  metric_param: 0.75
+  networkConnectedAtStart: false
+  numbOfJammers:
+  - 0
+  - 3
+  numbOfUsers:
+  - 2
+  - 26
+  obs_type: full
+  render_mode: null
+  routing_func: sequential_max_flow
+  seed: 22
+  state_loss_rate: 0
+  step_size: 1
+eval_type: filter_best_agent
+log_dir: out/best_agents/
+log_eval: false
+log_results: false
+log_state: false
+mode: evaluate

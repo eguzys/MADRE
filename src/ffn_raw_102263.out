@@ -1,0 +1,124 @@
+
+CondaError: Run 'conda init' before 'conda activate'
+
+/work/scratch/eguzys/padre_env/lib/python3.11/site-packages/benchmarl/environments/common.py:41: UserWarning: TaskConfig python dataclass not found, task is being loaded without type checks
+  warnings.warn(
+/work/scratch/eguzys/padre_env/lib/python3.11/site-packages/torchrl/envs/libs/pettingzoo.py:281: UserWarning: PettingZoo in TorchRL is tested using version == 1.24.3 , If you are using a different version and are experiencing compatibility issues,please raise an issue in the TorchRL github.
+  warnings.warn(
+/work/scratch/eguzys/padre_env/lib/python3.11/site-packages/torchrl/collectors/_base.py:1045: DeprecationWarning: SyncDataCollector has been deprecated and will be removed in v0.13. Please use Collector instead.
+  warnings.warn(
+wandb: WARNING `resume` will be ignored since W&B syncing is set to `offline`. Starting a new run with run id normalizedmappo_static_mlp__e557110e_26_07_07-16_16_43.
+wandb: Tracking run with wandb version 0.27.0
+wandb: W&B syncing is set to `offline` in this directory. Run `wandb online` or set WANDB_MODE=online to enable cloud syncing.
+wandb: Run data is saved locally in out/benchmarl_raw/ffn_raw/normalizedmappo_static_mlp__e557110e_26_07_07-16_16_43/wandb/offline-run-20260707_161646-normalizedmappo_static_mlp__e557110e_26_07_07-16_16_43
+
+Algorithm: padre_mappo_norm, Task: padre/raw
+
+Loaded config:
+
+experiment:
+  sampling_device: cuda
+  train_device: cuda
+  buffer_device: cuda
+  share_policy_params: true
+  prefer_continuous_actions: true
+  collect_with_grad: false
+  parallel_collection: false
+  gamma: 0.99
+  lr: 5.0e-05
+  adam_eps: 1.0e-06
+  adam_extra_kwargs: {}
+  clip_grad_norm: true
+  clip_grad_val: 5.0
+  soft_target_update: true
+  polyak_tau: 0.005
+  hard_target_update_frequency: 5
+  exploration_eps_init: 0.8
+  exploration_eps_end: 0.01
+  exploration_anneal_frames: null
+  max_n_iters: null
+  max_n_frames: 3000000
+  on_policy_collected_frames_per_batch: 6000
+  on_policy_n_envs_per_worker: 10
+  on_policy_n_minibatch_iters: 10
+  on_policy_minibatch_size: 400
+  off_policy_collected_frames_per_batch: 6000
+  off_policy_n_envs_per_worker: 10
+  off_policy_n_optimizer_steps: 1000
+  off_policy_train_batch_size: 128
+  off_policy_memory_size: 1000000
+  off_policy_init_random_frames: 0
+  off_policy_use_prioritized_replay_buffer: false
+  off_policy_prb_alpha: 0.6
+  off_policy_prb_beta: 0.4
+  evaluation: true
+  render: false
+  evaluation_interval: 120000
+  evaluation_episodes: 10
+  evaluation_deterministic_actions: true
+  evaluation_static: false
+  loggers:
+  - csv
+  - wandb
+  project_name: benchmarl
+  wandb_extra_kwargs: {}
+  create_json: true
+  save_folder: out/benchmarl_raw/ffn_raw
+  restore_file: null
+  restore_map_location: null
+  checkpoint_interval: 120000
+  checkpoint_at_end: true
+  keep_checkpoints_num: 3
+  exclude_buffer_from_checkpoint: false
+algorithm:
+  share_param_critic: true
+  clip_epsilon: 0.2
+  entropy_coef: 0.01
+  critic_coef: 1.0
+  loss_critic_type: l2
+  lmbda: 0.9
+  scale_mapping: biased_softplus_1.0
+  use_tanh_normal: true
+  minibatch_advantage: false
+task:
+  numbOfNodes: 4
+  numbOfJammers: 1
+  numbOfUsers: 15
+  ep_length: 1000
+  state_loss_rate: 0.3
+  self_flag: true
+  aoi: true
+  history_K: 1
+  mask: true
+  obs_wrapper: raw
+model:
+  name: mlp
+  num_cells:
+  - 256
+  - 256
+  layer_class: torch.nn.Linear
+  activation_class: torch.nn.Tanh
+  activation_kwargs: null
+  norm_class: null
+  norm_kwargs: null
+  num_feature_dims: 2
+critic_model:
+  name: mlp
+  num_cells:
+  - 256
+  - 256
+  layer_class: torch.nn.Linear
+  activation_class: torch.nn.Tanh
+  activation_kwargs: null
+  norm_class: null
+  norm_kwargs: null
+  num_feature_dims: 1
+seed: 69
+
+  0%|          | 0/500 [00:00<?, ?it/s]/work/scratch/eguzys/padre_env/lib/python3.11/site-packages/benchmarl/experiment/logger.py:125: UserWarning: No episode terminated this iteration and thus the episode rewards will be NaN, this is normal if your horizon is longer then one iteration. Learning is proceeding fine.The episodes will probably terminate in a future iteration.
+  warnings.warn(
+[92m2026-07-07 16:18:42,726 [torchrl][INFO][0m    Initialized LazyTensorStorage with torch.Size([6000]) shape[92m [END][0m
+/work/scratch/eguzys/padre_env/lib/python3.11/site-packages/torchrl/objectives/ppo.py:1245: UserWarning: You requested advantage normalization and the advantage key has more dimensions than the tensordict batch. Make sure to pass `normalize_advantage_exclude_dims` if you want to keep any dimension independent while computing normalization statistics. If you are working in multi-agent/multi-objective settings this is highly suggested.
+  warnings.warn(
+wandb: WARNING Symlinked 1 file into the W&B run directory; call wandb.save again to sync new files.
+mean return = nan:   0%|          | 1/500 [05:32<46:09:00, 332.95s/it]mean return = 1489.6517333984375:   0%|          | 2/500 [07:26<28:13:24, 204.03s/it]mean return = nan:   1%|          | 3/500 [09:19<22:25:31, 162.44s/it]               [2026-07-07T16:26:39.997] error: *** JOB 102263 ON studgpu-node01 CANCELLED AT 2026-07-07T16:26:39 DUE to SIGNAL Terminated ***

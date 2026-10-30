@@ -1,0 +1,8 @@
+{
+  "dim": 12,
+  "hidden": 64,
+  "output": 12,
+  "max_n": 25,
+  "best_val_recon": 36.75817108154297,
+  "class": "DeepSetsAE"
+}

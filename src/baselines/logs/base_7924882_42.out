@@ -1,0 +1,3 @@
+=== task=42 policy=random N=3 seeds=20..29 ===
+CAPACITY CLIFF WARNING: _link_capacity_bps returns exactly 0 when SNR < -10 dB (hard cutoff, not smooth decay).  If drones sit just outside radio range, reward gradient = 0 (dead zone).  Consider a smooth decay or reducing the -10 dB threshold if training stalls.
+[2026-07-20T23:37:53.375+02:00] error: *** JOB 7924882 ON eu-a2p-285 CANCELLED AT 2026-07-20T23:37:53 DUE to SIGNAL Terminated ***

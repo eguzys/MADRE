@@ -1,0 +1,35 @@
+name: Proof CI
+
+on:
+  push:
+    paths: ['proof/**', '.github/workflows/proof.yml']
+  pull_request:
+    paths: ['proof/**', '.github/workflows/proof.yml']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: proof
+    steps:
+      - uses: actions/checkout@v4
+      # Installs elan, downloads the Mathlib cache (`lake exe cache get`) and runs `lake build`.
+      - uses: leanprover/lean-action@v1
+        with:
+          lake-package-directory: proof
+      # Fails if any main theorem depends on `sorry` or on an axiom other than Lean's three
+      # standard ones, or if fewer theorems than expected are checked.
+      - name: Check axioms
+        run: |
+          lake env lean MadreProof/Check.lean | tee axioms.txt
+          if grep -q "sorryAx" axioms.txt; then echo "sorry found"; exit 1; fi
+          used=$(grep 'depends on axioms' axioms.txt | sed 's/.*\[//; s/\].*//' | tr ',' '\n' | tr -d ' ' | sort -u)
+          for a in $used; do
+            case "$a" in propext|Classical.choice|Quot.sound) ;; *) echo "non-standard axiom: $a"; exit 1;; esac
+          done
+          test "$(grep -c 'depends on axioms' axioms.txt)" -ge 55

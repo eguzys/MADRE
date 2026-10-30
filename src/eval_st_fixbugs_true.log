@@ -1,0 +1,49 @@
+/home/emilis/pythonEnviroment/padre/lib/python3.11/site-packages/benchmarl/environments/common.py:41: UserWarning: TaskConfig python dataclass not found, task is being loaded without type checks
+  warnings.warn(
+/home/emilis/pythonEnviroment/padre/lib/python3.11/site-packages/torchrl/envs/libs/pettingzoo.py:281: UserWarning: PettingZoo in TorchRL is tested using version == 1.24.3 , If you are using a different version and are experiencing compatibility issues,please raise an issue in the TorchRL github.
+  warnings.warn(
+/home/emilis/Documents/thesis/code/src/architectures/st_model.py:77: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  self.attention = nn.TransformerEncoder(encoder_layer, num_layers=n_layers)
+/home/emilis/pythonEnviroment/padre/lib/python3.11/site-packages/torchrl/collectors/_base.py:1045: DeprecationWarning: SyncDataCollector has been deprecated and will be removed in v0.13. Please use Collector instead.
+  warnings.warn(
+Loading checkpoint: /home/emilis/Documents/thesis/code/src/out/cluster/st_probe/checkpoint_4800000.pt
+Policy loaded. Task config: {'numbOfNodes': 4, 'numbOfJammers': 1, 'numbOfUsers': 15, 'ep_length': 1000, 'state_loss_rate': 0.3, 'self_flag': True, 'aoi': True, 'history_K': 1, 'mask': True}
+
+Running 20 seeded episode(s)  [policy=trained, render=True, device=cuda]
+
+  ep   0 seed=   0  reward=2519.705  tp=18.555 Mbps  util=0.062  len=1000  [trunc]
+  ep   1 seed=   1  reward=1042.305  tp= 2.872 Mbps  util=0.010  len=1000  [trunc]
+  ep   2 seed=   2  reward= 147.837  tp= 0.320 Mbps  util=0.001  len=1000  [trunc]
+  ep   3 seed=   3  reward=1257.559  tp= 4.404 Mbps  util=0.015  len=1000  [trunc]
+  ep   4 seed=   4  reward= 363.056  tp= 0.623 Mbps  util=0.002  len=1000  [trunc]
+  ep   5 seed=   5  reward=3165.325  tp=22.937 Mbps  util=0.076  len=1000  [trunc]
+  ep   6 seed=   6  reward=4015.935  tp=57.648 Mbps  util=0.192  len=1000  [trunc]
+  ep   7 seed=   7  reward=3007.923  tp=19.691 Mbps  util=0.066  len=1000  [trunc]
+  ep   8 seed=   8  reward=3130.040  tp=22.278 Mbps  util=0.074  len=1000  [trunc]
+  ep   9 seed=   9  reward=3384.149  tp=29.098 Mbps  util=0.097  len=1000  [trunc]
+  ep  10 seed=  10  reward=2970.301  tp=19.033 Mbps  util=0.063  len=1000  [trunc]
+  ep  11 seed=  11  reward=3338.674  tp=27.849 Mbps  util=0.093  len=1000  [trunc]
+  ep  12 seed=  12  reward=  11.339  tp= 0.015 Mbps  util=0.000  len=1000  [trunc]
+  ep  13 seed=  13  reward=   0.000  tp= 0.000 Mbps  util=0.000  len=1000  [trunc]
+  ep  14 seed=  14  reward=3006.817  tp=19.547 Mbps  util=0.065  len=1000  [trunc]
+  ep  15 seed=  15  reward= 496.124  tp= 0.672 Mbps  util=0.002  len=1000  [trunc]
+  ep  16 seed=  16  reward=3022.382  tp=19.789 Mbps  util=0.066  len=1000  [trunc]
+  ep  17 seed=  17  reward= 512.343  tp= 1.322 Mbps  util=0.004  len=1000  [trunc]
+  ep  18 seed=  18  reward= 799.958  tp= 2.410 Mbps  util=0.008  len=1000  [trunc]
+  ep  19 seed=  19  reward=1677.143  tp= 4.427 Mbps  util=0.015  len=1000  [trunc]
+
+────────────────────────────────────────────────────────
+  Aggregate statistics  (20 seeded episodes)
+────────────────────────────────────────────────────────
+  metric                                mean       std
+────────────────────────────────────────────────────────
+  episode_reward_total             1893.4457  1341.9874
+  mean_throughput_mbps               13.6745   14.4081
+  mean_utilization                    0.0456    0.0480
+  episode_length                   1000.0000    0.0000
+  episode_outcome                     0.0000    0.0000
+  fraction_committed_steps               nan       nan
+────────────────────────────────────────────────────────
+
+
+Results written to: /home/emilis/Documents/thesis/code/src/evaluation/results/checkpoint_4800000_trained_20260529_153406

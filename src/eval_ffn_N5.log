@@ -1,0 +1,19 @@
+/home/emilis/pythonEnviroment/padre/lib/python3.11/site-packages/benchmarl/environments/common.py:41: UserWarning: TaskConfig python dataclass not found, task is being loaded without type checks
+  warnings.warn(
+/home/emilis/pythonEnviroment/padre/lib/python3.11/site-packages/torchrl/envs/libs/pettingzoo.py:281: UserWarning: PettingZoo in TorchRL is tested using version == 1.24.3 , If you are using a different version and are experiencing compatibility issues,please raise an issue in the TorchRL github.
+  warnings.warn(
+/home/emilis/pythonEnviroment/padre/lib/python3.11/site-packages/torchrl/collectors/_base.py:1045: DeprecationWarning: SyncDataCollector has been deprecated and will be removed in v0.13. Please use Collector instead.
+  warnings.warn(
+Loading checkpoint: /home/emilis/Documents/thesis/code/src/out/cluster/ffn_probe_5540bc8e/checkpoint_4320000.pt
+Traceback (most recent call last):
+  File "/home/emilis/Documents/thesis/code/src/evaluation/evaluate.py", line 244, in <module>
+    main()
+  File "/home/emilis/Documents/thesis/code/src/evaluation/evaluate.py", line 133, in main
+    action_fn, task_config = load_trained_policy(str(ckpt_path), device)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/emilis/Documents/thesis/code/src/evaluation/policies.py", line 52, in load_trained_policy
+    policy, task_config = _load_via_hydra_compose(ckpt, device)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/emilis/Documents/thesis/code/src/evaluation/policies.py", line 243, in _load_via_hydra_compose
+    param.copy_(_st_sd[name])
+RuntimeError: The size of tensor a (110) must match the size of tensor b (88) at non-singleton dimension 1

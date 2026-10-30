@@ -1,0 +1,15 @@
+{
+  "hidden": 128,
+  "output": 8,
+  "token_dim": 13,
+  "max_users": 25,
+  "class": "DeepSetsAE",
+  "selection_metric": "setW% on 5 physical channels (angle,rssi,interference,noise_floor,throughput)",
+  "setW_pct_5chan_mean": 38.53,
+  "setW_pct_4chan_mean_thru_excluded": 28.82,
+  "runner_up": "h64_o12 (30.37 4-chan), within ~1.5pt",
+  "note": "frozen-arena data (seeds 1000-1299), throughput near-degenerate (~77% flat); h128_o8 is interior optimum, capacity past it degrades (h128_o12/o16 worst in grid). Supersedes dead-data pick omnet_h64_o12.pt.",
+  "trained_from": "omnet_sets_merged.npz (1.5M sets, frozen L=1700 mc=2)",
+  "latent_scale": 100.0,
+  "latent_scale_basis": "p99.9=67.57, absmax=109.55 over all 1500000 sets of omnet_sets_merged.npz (Euler job 7915388); global, not per-dim; per-dim p99 spread 16.0-63.5; fitted on the encoder's own training distribution. Same divisor as the event encoder."
+}

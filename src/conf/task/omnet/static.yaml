@@ -1,0 +1,21 @@
+defaults:
+  - _self_
+
+# 1000, NOT 500. The jammer fires at step 500 (RLBridge.cc jammerActivateStep_).
+# At ep_length=500 every training episode is truncated EXACTLY when the jammer
+# activates, so the policy never sees a jammed world -- and the whole contested-EM
+# premise is absent from training.
+#
+# MUST MATCH *.rlBridge.maxSteps in omnetpp.ini.
+ep_length: 1000
+
+# "frozen" (default): the per-user set encoder runs ENV-SIDE
+# (MANET/encoders/omnet/deepsets_h128_o8.pt, frozen, reconstruction-trained)
+# -- byte-identical to the pre-encoder_mode behaviour. "learned": the raw
+# per-user token block reaches the model instead, and a model-side
+# LearnableUserSetEncoder (model.obs_layout=omnet) trains it end-to-end from
+# the RL reward -- see conf/task/omnet/static_learnedenc.yaml, which is
+# otherwise identical to this file. Explicit here (rather than left to the
+# OMNeTEnv/OMNeTClass default) so the frozen-vs-learned comparison is
+# documented at the task level, not implied.
+encoder_mode: frozen

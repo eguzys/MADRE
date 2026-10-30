@@ -1,0 +1,23 @@
+mode: retrain
+attacker:
+  model: Static_ClusterJammers
+  steps_till_jammer_active: 200
+  step_jammers_start_moving: 100
+env:
+  name: Static_MANETEnv
+  parameters:
+    allow_early_ep_finish: false
+    jammersSpawnNextToUsers: true
+    networkConnectedAtStart: false
+    numbOfJammers: 1
+    seed: 89
+  render: false
+loading_model:
+  dir_of_agent_to_load: path/to/your/models/folder
+rew_wrapper:
+  type: SquaredReward
+training:
+  ep_length: 20000
+  save_freq: 1000000
+  stat_size: 20
+  timesteps: 200000000

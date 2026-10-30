@@ -1,0 +1,2 @@
+srun: error: studgpu-node01: task 0: Exited with exit code 127
+/usr/bin/bash: eval_fix.sh: No such file or directory

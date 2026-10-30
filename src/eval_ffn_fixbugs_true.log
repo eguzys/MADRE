@@ -1,0 +1,7 @@
+usage: evaluate.py [-h] [--render] [--no-render] [-n EPISODES]
+                   [--seeds SEEDS [SEEDS ...]]
+                   [--policy {trained,random,greedy,spsa}] [--random]
+                   [--condition {sinr,signal,interference,traffic}]
+                   [--spsa-c SPSA_C] [--spsa-a SPSA_A] [--device DEVICE]
+                   checkpoint
+evaluate.py: error: the following arguments are required: checkpoint

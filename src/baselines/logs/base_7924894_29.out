@@ -1,0 +1,15 @@
+=== task=29 policy=greedy N=5 seeds=90..99 ===
+CAPACITY CLIFF WARNING: _link_capacity_bps returns exactly 0 when SNR < -10 dB (hard cutoff, not smooth decay).  If drones sit just outside radio range, reward gradient = 0 (dead zone).  Consider a smooth decay or reducing the -10 dB threshold if training stalls.
+  ep seed=  90  reward= 230404.7618  steps=1000
+  ep seed=  91  reward= 167910.0631  steps=1000
+  ep seed=  92  reward=  70008.8302  steps=1000
+  ep seed=  93  reward= 139010.6842  steps=1000
+  ep seed=  94  reward= 213784.3608  steps=1000
+  ep seed=  95  reward=  99503.8666  steps=1000
+  ep seed=  96  reward= 305033.4405  steps=1000
+  ep seed=  97  reward= 129155.9086  steps=1000
+  ep seed=  98  reward= 172868.6620  steps=1000
+  ep seed=  99  reward= 158302.4106  steps=1000
+
+Wrote 10 episode(s) to /cluster/scratch/eguzys/baselines/greedy_n5_s90.csv
+=== OK 11 lines ===

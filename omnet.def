@@ -1,0 +1,44 @@
+Bootstrap: docker
+From: ubuntu:24.04
+
+%files
+    /tmp/omnet_stage/omnetpp-6.4.0  /opt/omnetpp-6.4.0
+    /tmp/omnet_stage/inet4.6        /opt/inet4.6
+
+%post -c /bin/bash
+    set -e
+    export DEBIAN_FRONTEND=noninteractive
+    apt-get update && apt-get install -y \
+        build-essential clang lld bison flex perl \
+        python3 python3-venv python3-dev \
+        libxml2-dev zlib1g-dev libzmq3-dev \
+        pkg-config nlohmann-json3-dev \
+        ca-certificates
+
+    # clean any host-built artifacts so we rebuild inside the container
+    # purge host-built artifacts WITHOUT needing omnetpp tools (not in PATH yet)
+    find /opt/omnetpp-6.4.0 /opt/inet4.6 \( -name '*.o' -o -name '*.d' -o -name '*.so' -o -name '*.a' -o -name '*.pch' -o -name '*.gch' \) -delete || true
+    rm -rf /opt/omnetpp-6.4.0/out /opt/inet4.6/out || true
+
+    cd /opt/omnetpp-6.4.0
+    . ./setenv -f
+    ./configure WITH_QTENV=no WITH_OSG=no WITH_OSGEARTH=no
+    make -j$(nproc) MODE=release
+
+    cd /opt/inet4.6
+    . /opt/omnetpp-6.4.0/setenv -f
+    make makefiles
+    make -j$(nproc) MODE=release
+
+    python3 -m venv /opt/venv
+    /opt/venv/bin/pip install --upgrade pip
+    /opt/venv/bin/pip install numpy scipy pyzmq pulp highspy gymnasium pettingzoo
+
+%environment
+    export OMNETPP_ROOT=/opt/omnetpp-6.4.0
+    export INET_ROOT=/opt/inet4.6
+    export PATH=/opt/venv/bin:$OMNETPP_ROOT/bin:$PATH
+    export LD_LIBRARY_PATH=$OMNETPP_ROOT/lib:$INET_ROOT/src:$LD_LIBRARY_PATH
+
+%runscript
+    exec "$@"

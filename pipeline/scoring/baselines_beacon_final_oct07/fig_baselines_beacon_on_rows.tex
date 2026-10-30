@@ -1,0 +1,54 @@
+% fig:baselines, BEACON ON (wave_baselines_ub.sh: DUB<chi>_{GTMG,GRD,AGG,R1H}); 100 users, 1200 m, cluster spawn
+% m = mean episode_reward/250*1000 [bit/s], e = 1.96*sd/sqrt(n), n=100 episodes (ep seeds 0..99) -- same estimator
+% that reproduces every baseline coordinate of the current (beacon-off) figure exactly.
+% scored by results/baselines_beacon_final_oct07/score_baselines.py -- FINAL: every family complete (10 shards x 10 ep,
+% all COMPLETED in sacct); GTM chi=1 n=100 (s60 = rerun 2298104).
+% Drop-in: replace the rows of each \addplot below (5 points, as now). A chi=0.4 row is given in a comment
+% for each, in case the figure gains the c=40 column (beacon-on data now exist at 0.4; the old run had none).
+
+% --- \acs{GTM} ---
+    c     m        e      \\
+    5     6932     1939   \\
+    10    15716    3436   \\
+    20    34108    6529   \\
+%   40    68270    10456  \\   % optional chi=0.4 point
+    60    102868   12940  \\
+    100   157286   15304  \\
+
+% --- Greedy ---
+    c     m        e      \\
+    5     4879     1417   \\
+    10    10496    2270   \\
+    20    23622    3734   \\
+%   40    49639    5117   \\   % optional chi=0.4 point
+    60    74980    5955   \\
+    100   121459   7156   \\
+
+% --- Heuristic message ---
+    c     m        e      \\
+    5     19602    3320   \\
+    10    31054    4260   \\
+    20    51801    6324   \\
+%   40    73627    7879   \\   % optional chi=0.4 point
+    60    90560    9018   \\
+    100   113607   10151  \\
+
+% --- One-hop relay ---
+    c     m        e      \\
+    5     5593     1393   \\
+    10    10231    2222   \\
+    20    21659    3891   \\
+%   40    42106    5070   \\   % optional chi=0.4 point
+    60    59874    6120   \\
+    100   87945    6714   \\
+
+% --- \datamadre (MADRE, L=64), BEACON ON = the L=64 block of results/density_beacon_k3_oct07/fig_density_beacon_on_rows.tex
+% (shared by fig:density and fig:baselines; fig:baselines skips the c=40 row). chi=0.2/0.4: k=3 training seeds pooled,
+% two-level bootstrap; other chi: seed 1, episode bars. m rounded to 100, ep/em = ratio-CI vs ENUB_N100_<chi> x its mean.
+    c     m        ep      em     \\
+    5     20300    8700    5400   \\
+    10    36600    10800   7800   \\
+    20    67800    15200   11700  \\
+    40    102800   14000   11900  \\
+    60    128800   15200   13400  \\
+    100   165900   14400   13200  \\

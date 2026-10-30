@@ -1,0 +1,8 @@
+defaults:
+  - mappo
+  - _self_
+
+# Inherit BenchMARL's bundled mappo; override only entropy.
+# entropy_coef was 0.0 upstream -> no exploration pressure, policy
+# collapsed its action std early. Nonzero keeps it exploring.
+entropy_coef: 0.01

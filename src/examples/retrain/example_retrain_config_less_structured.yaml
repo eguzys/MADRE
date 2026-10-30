@@ -1,0 +1,6 @@
+mode: retrain
+
+dir_of_agent_to_load: path/to/your/models/folder
+attackerModel: Static_ClusterJammers
+steps_till_jammer_active: 50
+env: Static_MANETEnv

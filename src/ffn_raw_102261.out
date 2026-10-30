@@ -1,0 +1,4 @@
+
+CondaError: Run 'conda init' before 'conda activate'
+
+[2026-07-07T16:13:12.006] error: *** JOB 102261 ON studgpu-node01 CANCELLED AT 2026-07-07T16:13:12 DUE to SIGNAL Terminated ***

@@ -1,0 +1,20 @@
+defaults:
+  - padre_mappo_norm_config
+  - _self_
+
+# All mappo fields must be explicit because NormalizedMappoConfig schema
+# uses MISSING sentinel values. Values mirror padre_mappo.yaml.
+share_param_critic: True
+clip_epsilon: 0.2
+entropy_coef: 0.3
+critic_coef: 1.0
+loss_critic_type: "l2"
+lmbda: 0.9
+scale_mapping: "biased_softplus_1.0"
+use_tanh_normal: True
+minibatch_advantage: False
+
+# Floor on the policy standard deviation (see DEFAULT_SCALE_LB derivation
+# in benchmarl_padre/normalized_mappo.py). Configurable hyperparameter
+# meant to be ablated, not a tuned magic number.
+scale_lb: 0.1

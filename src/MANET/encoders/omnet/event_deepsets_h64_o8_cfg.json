@@ -1,0 +1,10 @@
+{
+  "dim": 12,
+  "hidden": 64,
+  "output": 8,
+  "max_n": 64,
+  "best_val_recon": 381.35650634765625,
+  "class": "DeepSetsAE",
+  "latent_scale": 100.0,
+  "latent_scale_basis": "p99.9=110.25, absmax=275.73 over all 150150 cut rows of events_cut.npz; global, not per-dim; per-dim p99 spread 15.3-89.2; fitted on the encoder's own training distribution"
+}

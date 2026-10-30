@@ -1,0 +1,72 @@
+attacker:
+  model:
+  - Static_GreedyJammers
+  - Static_ClusterJammers
+  - Static_TrafficJammers
+  steps_till_jammer_active: 150
+  step_jammers_start_moving: 0
+env:
+  name: Static_MANETEnv
+  parameters:
+    allow_early_ep_finish: true
+    jammersSpawnNextToUsers: false
+    networkConnectedAtStart: false
+    numbOfJammers:
+    - 0
+    - 5
+    numbOfNodes: 4
+    numbOfUsers:
+    - 2
+    - 21
+    routing_func: sequential_max_flow
+    seed: 33
+    step_size: 2
+  render: false
+model:
+  RL_model_name: PPO
+  architecture: ST
+obs_wrapper:
+  config:
+    capacity_matrix: false
+    nodes:
+      closestReceiverDir: true
+      closestReceiverPos: false
+      closestSenderDir: true
+      closestSenderPos: false
+      closestUserDir: true
+      closestUserInterference: true
+      closestUserPos: false
+      inCapacities: true
+      inReceiverCount: false
+      inSenderCount: true
+      inUserCount: true
+      interference: true
+      outCapacities: true
+      outReceiverCount: true
+      outSenderCount: false
+      outUserCount: true
+      position: true
+      receivedSignal: false
+      sensedReceiverDemands: true
+      sensedSenderDemands: true
+      signalPower: true
+      trafficHosted: false
+    users:
+      destination: false
+      interference: false
+      offeredLoad: false
+      position: false
+      receivedSignal: false
+      signalPower: false
+  type: VS_COW
+rew_wrapper:
+  type: LinearReward
+storing_and_logging:
+  log_path: out/logs/BC
+  model_path: out/models/BC
+  tb_logname: ST_BC
+training:
+  ep_length: 13000
+  save_freq: 1000000
+  stat_size: 20
+  timesteps: 100000

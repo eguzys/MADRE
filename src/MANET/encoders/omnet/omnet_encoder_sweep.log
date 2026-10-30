@@ -1,0 +1,149 @@
+Many modules are hidden in this stack. Use "module --show_hidden spider SOFTWARE" if you are not able to find the required software
+===== hidden=64 output=4 =====
+eval on 120000 sets
+
+feature     nat_std   ident%   globW%    setW%
+angle         1.620     54.6     22.8     50.8
+rssi          7.221     60.1     25.8     42.5
+interference    6.443     12.9      4.1     14.8
+noise_floor    3.569     29.9     22.1     34.5
+throughput    0.256     59.3     42.0     59.9
+thru_valid    0.439     81.3     61.1     66.8
+id_tag_0      0.573     93.5     59.2     65.0
+id_tag_1      0.587     93.5     60.4     64.7
+id_tag_2      0.570     92.6     60.3     65.6
+id_tag_3      0.584     92.9     62.1     67.3
+id_valid      0.000       --       --       --
+present       0.000       --       --       --
+
+wrote /cluster/scratch/eguzys/omnet_enc/setw_h64_o4.json
+
+READ: ident% high + globW%/setW% low  => identity lost, mass preserved (metric was wrong).
+      ident% high + globW%/setW% ALSO high => real capacity loss (comforting story fails).
+===== hidden=64 output=8 =====
+eval on 120000 sets
+
+feature     nat_std   ident%   globW%    setW%
+angle         1.620     45.5     19.4     40.5
+rssi          7.221     58.8     27.3     46.5
+interference    6.443     14.2      5.1     17.7
+noise_floor    3.569     26.5     18.8     35.5
+throughput    0.256     58.4     41.3     57.7
+thru_valid    0.439     79.8     60.4     66.4
+id_tag_0      0.573     91.5     64.4     68.5
+id_tag_1      0.587     91.0     64.5     68.2
+id_tag_2      0.570     91.5     59.9     65.3
+id_tag_3      0.584     89.9     65.1     68.7
+id_valid      0.000       --       --       --
+present       0.000       --       --       --
+
+wrote /cluster/scratch/eguzys/omnet_enc/setw_h64_o8.json
+
+READ: ident% high + globW%/setW% low  => identity lost, mass preserved (metric was wrong).
+      ident% high + globW%/setW% ALSO high => real capacity loss (comforting story fails).
+===== hidden=64 output=12 =====
+eval on 120000 sets
+
+feature     nat_std   ident%   globW%    setW%
+angle         1.620     42.5     17.6     35.8
+rssi          7.221     60.1     24.3     39.2
+interference    6.443     13.4      5.1     16.1
+noise_floor    3.569     23.6     18.1     29.7
+throughput    0.256     58.5     45.4     59.6
+thru_valid    0.439     82.2     58.5     63.2
+id_tag_0      0.573     92.0     53.1     59.8
+id_tag_1      0.587     91.5     55.5     59.8
+id_tag_2      0.570     92.6     55.0     60.0
+id_tag_3      0.584     92.7     55.6     60.5
+id_valid      0.000       --       --       --
+present       0.000       --       --       --
+
+wrote /cluster/scratch/eguzys/omnet_enc/setw_h64_o12.json
+
+READ: ident% high + globW%/setW% low  => identity lost, mass preserved (metric was wrong).
+      ident% high + globW%/setW% ALSO high => real capacity loss (comforting story fails).
+===== hidden=64 output=16 =====
+eval on 120000 sets
+
+feature     nat_std   ident%   globW%    setW%
+angle         1.620     42.5     14.8     36.2
+rssi          7.221     61.7     35.8     51.2
+interference    6.443     19.4     15.1     24.0
+noise_floor    3.569     42.0     37.5     48.6
+throughput    0.256     60.3     40.3     58.3
+thru_valid    0.439     77.9     58.7     65.4
+id_tag_0      0.573     91.6     63.6     67.5
+id_tag_1      0.587     92.6     59.3     63.6
+id_tag_2      0.570     91.1     60.6     64.6
+id_tag_3      0.584     91.1     59.0     64.5
+id_valid      0.000       --       --       --
+present       0.000       --       --       --
+
+wrote /cluster/scratch/eguzys/omnet_enc/setw_h64_o16.json
+
+READ: ident% high + globW%/setW% low  => identity lost, mass preserved (metric was wrong).
+      ident% high + globW%/setW% ALSO high => real capacity loss (comforting story fails).
+===== hidden=128 output=4 =====
+eval on 120000 sets
+
+feature     nat_std   ident%   globW%    setW%
+angle         1.620     51.4     22.7     47.1
+rssi          7.221     64.5     28.9     50.0
+interference    6.443     20.3      7.6     24.5
+noise_floor    3.569     40.5     30.7     48.2
+throughput    0.256     60.5     39.0     60.2
+thru_valid    0.439     80.9     60.4     66.3
+id_tag_0      0.573     91.4     57.4     62.8
+id_tag_1      0.587     94.1     60.6     64.1
+id_tag_2      0.570     91.5     58.7     63.7
+id_tag_3      0.584     92.9     58.3     63.2
+id_valid      0.000       --       --       --
+present       0.000       --       --       --
+
+wrote /cluster/scratch/eguzys/omnet_enc/setw_h128_o4.json
+
+READ: ident% high + globW%/setW% low  => identity lost, mass preserved (metric was wrong).
+      ident% high + globW%/setW% ALSO high => real capacity loss (comforting story fails).
+===== hidden=128 output=8 =====
+eval on 120000 sets
+
+feature     nat_std   ident%   globW%    setW%
+angle         1.620     42.0     16.8     36.8
+rssi          7.221     60.9     27.1     47.5
+interference    6.443     18.3     13.8     20.7
+noise_floor    3.569     40.1     33.4     43.2
+throughput    0.256     55.1     40.2     56.1
+thru_valid    0.439     81.1     61.6     65.4
+id_tag_0      0.573     92.0     63.2     67.3
+id_tag_1      0.587     92.8     63.1     66.6
+id_tag_2      0.570     95.0     59.4     63.7
+id_tag_3      0.584     92.7     59.9     64.7
+id_valid      0.000       --       --       --
+present       0.000       --       --       --
+
+wrote /cluster/scratch/eguzys/omnet_enc/setw_h128_o8.json
+
+READ: ident% high + globW%/setW% low  => identity lost, mass preserved (metric was wrong).
+      ident% high + globW%/setW% ALSO high => real capacity loss (comforting story fails).
+===== hidden=128 output=12 =====
+eval on 120000 sets
+
+feature     nat_std   ident%   globW%    setW%
+angle         1.620     50.4     23.0     45.6
+rssi          7.221     62.1     34.2     49.4
+interference    6.443     17.8      8.7     21.7
+noise_floor    3.569     44.3     27.1     48.5
+throughput    0.256     55.7     43.0     58.1
+thru_valid    0.439     85.2     66.5     71.5
+id_tag_0      0.573     90.1     64.3     67.8
+id_tag_1      0.587     91.6     61.8     64.7
+id_tag_2      0.570     91.4     61.1     64.9
+id_tag_3      0.584     91.3     62.6     67.3
+id_valid      0.000       --       --       --
+present       0.000       --       --       --
+
+wrote /cluster/scratch/eguzys/omnet_enc/setw_h128_o12.json
+
+READ: ident% high + globW%/setW% low  => identity lost, mass preserved (metric was wrong).
+      ident% high + globW%/setW% ALSO high => real capacity loss (comforting story fails).
+===== hidden=128 output=16 =====

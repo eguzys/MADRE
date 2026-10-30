@@ -1,0 +1,37 @@
+agent_patterns:
+- src/ST_BC_trained
+
+baselines_with_cs:
+- baseline: GreedyMaximizer
+  cs: TrafficHosted
+  threshold: 1000000000000000.0
+
+env_constr: Static_MANETEnv
+
+eval_params:
+  allow_early_ep_finish: false
+  attackerModel: Static_ClusterJammers
+  deterministic: true
+  ep_length: 13000
+  jammer_ep_steps: 500
+  jammersSpawnNextToUsers: false
+  n_eval_eps: 3
+  networkConnectedAtStart: false
+  numbOfNodes: 4
+  numbOfJammers: 1
+  numbOfUsers:
+    - 2
+    - 21
+  obs_type: VS_COW
+  render_mode: plot
+  routingFunc: sequential_max_flow
+  seed: 22
+  state_loss_rate: 0.4
+  step_size: 2
+
+eval_type: grouped_eval
+log_dir: out/evaluations/ST_test/
+log_results: true
+log_state: true
+log_eval: true
+mode: evaluate

@@ -1,0 +1,21 @@
+defaults:
+  - base_experiment
+  - _self_
+
+# Inherit all of BenchMARL's base_experiment defaults; override only these.
+# Save a checkpoint every 120k frames (must be a multiple of the
+# on-policy collected_frames_per_batch, default 6000) + a final one at the end.
+checkpoint_interval: 120_000
+checkpoint_at_end: true
+
+# NOTE: save_folder is intentionally NOT set here. Pass it per run so each
+# architecture lands in its own tree, e.g.:
+#   python run.py ... experiment.save_folder=out/benchmarl/ffn
+#   python run.py ... experiment.save_folder=out/benchmarl/st
+
+# Force GPU. base_experiment defaults to cpu, which is much slower.
+# These are read by Hydra at load time (the channel that actually works).
+sampling_device: cuda
+train_device: cuda
+buffer_device: cuda
+on_policy_n_minibatch_iters: 10

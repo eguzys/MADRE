@@ -1,0 +1,110 @@
+# pycache
+*.pyc
+__pycache__/
+.pytest_cache
+
+# vscode cache
+.vscode
+
+# env
+.venv
+.venv_sweep/
+
+# customized scripts
+notes/
+custom_*.py
+
+# doc site
+site/
+
+# ubelix batch
+job_scripts/
+python_rl_job*.sh
+ubelix_train/
+
+# Ignore everything inside out/ or build/
+out/*
+build/*
+
+# Large data files (too big for GitHub)
+src/demonstrations.pkl
+
+# OMNeT/OM2G run outputs and checkpoints (data, not source -- regenerate, don't version)
+models/
+evaluation/
+logs/
+diag_v2/out*/
+eval_sanity/
+eval_v2_250/
+eval_v2_st150k/
+eval_v2_verdict/
+debug_st_cfg99/run_arton/
+debug_st_cfg99/source/
+debug_st_cfg99/eval_euler/
+debug_st_cfg99/geometry/
+debug_st_cfg99/spawn_probe_out/
+debug_st_cfg99/*.json
+om2g_out/
+*_out/
+# BenchMARL run outputs (checkpoints, logs) live under src/
+src/out/
+src/outputs/
+src/wandb/
+src/mappo_static_mlp__*/
+mappo_static_mlp__*/
+
+# Evaluation results (contain per-run CSVs and configs — not source code)
+src/evaluation/results/
+
+# --- scratch files, binaries, backups ---
+# Loose model checkpoints (binaries, never commit; live ones are under src/out/)
+*.pt
+# Backup files from migrations
+*.bak
+*.sb3-bak
+# Local tool and notes folders, never committed
+CLAUDE.md
+claude answers/
+# Debug / scratch scripts (not deliverables)
+src/diagnose_reward.py
+src/smokeTest.py
+# Older standalone eval script (superseded by src/evaluation/)
+eval_random_baseline.py
+# Local working notes
+src/updates.md
+
+# --- OMNeT++ build artifacts & run outputs (never commit) ---
+# Compiled objects and binaries
+*.o
+*.o.d
+omnet_smoke/omnet_smoke
+omnet_smoke/out/
+omnet_module/*.o
+# OMNeT++ result files (regenerated every run)
+omnet_smoke/results/
+# Baseline / run CSVs (regenerated)
+omnet_module/*.csv
+omnet_smoke/*.csv
+signal_*_run_*.csv
+greedy_run_*.csv
+
+# local run artifacts
+*.sif
+omnet.log
+.claude/
+FETCH_HEAD
+*.bak*
+omnet_smoke/Makefile
+omnet_module/diag_out/
+
+# BenchMARL Experiment() writes <save_folder>/<run_name>/config.pkl at
+# construction; tests and ad-hoc runs from src/ land here.
+src/normalizedmappo_static_*/
+normalizedmappo_static_*/
+
+# --- committed archives, exempted from the *_out/ rule above ---
+# `om2g_out/` and `*_out/` exist to keep live run output out of the repo. Three
+# directories in this branch are deliverables that happen to match those
+# patterns, and these negations keep them visible to `git status` and `git add -A`.
+!arch_out/
+!results/ladder-20260909/om2g_out/

@@ -1,0 +1,15 @@
+defaults:
+  - experiment: padre
+  - algorithm: ???
+  - task: ???
+  - model: padre_mlp
+  - model@critic_model: layers/mlp
+  - _self_
+
+seed: 69
+
+# Pull BenchMARL's bundled configs (experiment/, algorithm/, model/) into
+# Hydra's search path WITHOUT copying or editing the installed package.
+hydra:
+  searchpath:
+    - pkg://benchmarl/conf
